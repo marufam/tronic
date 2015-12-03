@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - dbtoko@localhost" uuid="2211aeb8-ff54-4fba-a8b4-1699715c9144">
+    <database-info product="MySQL" version="5.6.24" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="dbtoko"/>
+    <table name="admin" schema="" catalog="dbtoko" type="TABLE">
+      <column name="kdadmin" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="namaadmin" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="kdadmin"/>
+    </table>
+    <table name="contact" schema="" catalog="dbtoko" type="TABLE">
+      <column name="kdkontak" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nama" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="subjek" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="pesan" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+    </table>
+    <table name="detailtransaksi" schema="" catalog="dbtoko" type="TABLE">
+      <column name="kdtransaksi" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="kdproduk" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="harga" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="jumlah" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="subtotal" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="kdtransaksi,kdproduk"/>
+    </table>
+    <table name="guestbook" schema="" catalog="dbtoko" type="TABLE">
+      <column name="idguest" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="nama" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="pesan" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="ip" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idguest"/>
+    </table>
+    <table name="informasi" schema="" catalog="dbtoko" type="TABLE">
+      <column name="idtransaksi" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="nama" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="meta_desk" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="meta_key" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="favicon" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idtransaksi"/>
+    </table>
+    <table name="kategori" schema="" catalog="dbtoko" type="TABLE">
+      <column name="kdkategori" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="kategori" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="kdkategori"/>
+    </table>
+    <table name="komentar" schema="" catalog="dbtoko" type="TABLE">
+      <column name="kdkomentar" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="kdproduk" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="kduser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="isi" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="kdkomentar"/>
+    </table>
+    <table name="produk" schema="" catalog="dbtoko" type="TABLE">
+      <column name="kdproduk" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="produk" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="gambar" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="harga" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="stok" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="keterangan" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="kdkategori" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="kdproduk"/>
+    </table>
+    <table name="slider" schema="" catalog="dbtoko" type="TABLE">
+      <column name="kdslider" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="slider" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="keterangan" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="kdslider"/>
+    </table>
+    <table name="statistik" schema="" catalog="dbtoko" type="TABLE">
+      <column name="idstatistik" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ip" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="tanggal" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idstatistik"/>
+    </table>
+    <table name="transaksi" schema="" catalog="dbtoko" type="TABLE">
+      <column name="kdtransaksi" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tgltransaksi" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="kdadmin" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="kduser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="total" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="kdtransaksi"/>
+    </table>
+    <table name="user" schema="" catalog="dbtoko" type="TABLE">
+      <column name="kduser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="namauser" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="alamat" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="notelp" sqlType="VARCHAR" precision="13" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="username" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="kduser"/>
+    </table>
+  </data-source>
+</component>
